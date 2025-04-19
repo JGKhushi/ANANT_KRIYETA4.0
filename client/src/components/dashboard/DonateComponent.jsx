@@ -4,6 +4,7 @@ import ImageUpload from "../shared/ImageUpload"
 import axios from "axios"
 import Loader from "../shared/Loader"
 import DonationMap from "../elements/DonationMap"
+import Cert from "../../assets/cert.png"
 
 export default function DonateComponent() {
   const [activeTab, setActiveTab] = useState("donate")
@@ -46,6 +47,13 @@ export default function DonateComponent() {
     fetchDonationHistory();
     
   }, []);
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = Cert;
+    link.download = "downloaded-certificate.png"; 
+    link.click();
+  };
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target
@@ -491,12 +499,13 @@ export default function DonateComponent() {
                 This certifies that <span className="font-medium">you</span> have donated food items to
                 <span className="font-medium"> an NGO or organization.</span>
               </p>
+              <img src={Cert} alt="certificate" className="object-contain h-40 rounded-md"/>
               {/* <div className="flex items-center text-sm text-gray-500">
                 <LuCalendar className="mr-1" /> April 5, 2025
               </div> */}
-              {/* <button className="mt-4 text-orange-500 hover:text-orange-600 text-sm font-medium">
+              <button onClick={handleDownload} className="mt-4 cursor-pointer text-orange-500 hover:text-orange-600 text-sm font-medium">
                 Download Certificate
-              </button> */}
+              </button>
             </div>
 
             {/* <div className="mt-6">
