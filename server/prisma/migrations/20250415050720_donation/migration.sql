@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Donation" ALTER COLUMN "foodImage" SET NOT NULL,
+ALTER COLUMN "foodImage" SET DATA TYPE TEXT;
