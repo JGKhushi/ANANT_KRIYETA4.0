@@ -70,6 +70,5 @@ Contributions are welcome! Please follow these steps:
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## Contact
 
 <!-- test -->
