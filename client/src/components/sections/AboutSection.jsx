@@ -8,7 +8,7 @@ export default function AboutSection() {
           <img
             src={FoodCollage}
             alt="Food platform illustration"
-            width={450}
+            width={600}
             height={450}
 
             className="rounded-lg shadow-md"
