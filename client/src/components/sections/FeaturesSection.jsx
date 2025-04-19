@@ -14,51 +14,51 @@ export default function FeaturesSection() {
   const [maxIndex, setMaxIndex] = useState(2); // 6 features with 4 visible at a time = 2 possible positions (0, 1, 2)
   const [slidRatio, setSlideRatio] = useState(25);
 
-    useEffect(() => {
-      const handleResize = () => {
-        const innerWidth = window.innerWidth;
-        setMaxIndex(innerWidth >= 768 ? 2 : 5); // Tailwind's md = 768px
-        setSlideRatio(innerWidth >= 768 ? 25 : 100)
-      };
-  
-      handleResize(); 
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-    }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      const innerWidth = window.innerWidth;
+      setMaxIndex(innerWidth >= 768 ? 2 : 5); // Tailwind's md = 768px
+      setSlideRatio(innerWidth >= 768 ? 25 : 100)
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const features = [
     {
-      icon: <LuHeartHandshake className="w-12 h-12 text-purple-600" />,
+      icon: <LuHeartHandshake className="w-12 h-12 text-orange-600" />,
       title: "Food Donation",
       description: "Donate excess food to charity organizations",
       link: "#"
     },
     {
-      icon: <LuChefHat className="w-12 h-12 text-purple-600" />,
+      icon: <LuChefHat className="w-12 h-12 text-orange-600" />,
       title: "Recipe Generator",
       description: "Generate recipes from ingredients you already have",
       link: "#"
     },
     {
-      icon: <LuCalendarClock className="w-12 h-12 text-purple-600" />,
+      icon: <LuCalendarClock className="w-12 h-12 text-orange-600" />,
       title: "Meal Planner",
       description: "Plan your meals for the week and save time",
       link: "#"
     },
     {
-      icon: <LuTimer className="w-12 h-12 text-purple-600" />,
+      icon: <LuTimer className="w-12 h-12 text-orange-600" />,
       title: "Expiry Tracker",
       description: "Track expiry dates of your groceries to reduce waste",
       link: "#"
     },
     {
-      icon: <LuShoppingCart className="w-12 h-12 text-purple-600" />,
+      icon: <LuShoppingCart className="w-12 h-12 text-orange-600" />,
       title: "Donation Request Portal",
       description: "NGOs can post urgent food requirements or campaigns, helping donors respond faster.",
       link: "#"
     },
     {
-      icon: <LuTimer className="w-12 h-12 text-purple-600" />,
+      icon: <LuTimer className="w-12 h-12 text-orange-600" />,
       title: "Verified Donor Access",
       description: "View details of donors, donation history, and manage regular contributors.",
       link: "#"
@@ -124,7 +124,7 @@ export default function FeaturesSection() {
             >
               {features.map((feature, index) => (
                 <div key={index} className="w-full sm:w-1/2 lg:w-1/4 flex-shrink-0 px-3">
-                  <div className="bg-white rounded-lg p-6 flex flex-col items-center text-center h-full">
+                  <div className="bg-white rounded-lg p-6 flex+ flex-col items-center text-center h-full">
                     <div className="mb-4">
                       {feature.icon}
                     </div>
